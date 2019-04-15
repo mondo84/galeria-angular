@@ -7,17 +7,18 @@
 <!-- columna 1 -->
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 pt-2 pb-2"> 
   
- <!-- abre componente card -->
- <div class="card h-100">
+<!-- abre componente card -->
+ <div class="card h-100"> 
 
+  <div class="card-body">
   <!-- imagen de la card -->
   <img class="card-img-top img-thumbnail img-st mx-auto 
-	      d-block mt-2 " src="{{objImage.thumbnail}}" alt="">
+	      d-block " src="{{objImage.thumbnail}}" alt=""
+	      data-toggle="modal" data-target="#exampleModalCenter">
    
-  <!-- abre cuerpo de la card -->
-  <div class="card-body">
-   <h4 class="card-title">{{objImage.titulo}}</h4>
-   <p class="card-text">{{objImage.descripcion}}</p>
+  <!-- abre cuerpo de la card -
+  <div class="card-body"> -->
+
   </div> <!-- cierra cuerpo de la card -->
 
  </div> <!-- cierra componente card --> 
@@ -28,3 +29,5 @@
 </div> <!-- cierra row -->
 
 </div> <!-- cierra container -->
+
+

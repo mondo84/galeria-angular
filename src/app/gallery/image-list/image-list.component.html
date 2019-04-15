@@ -1,6 +1,37 @@
 
 <!-- se pasan los datos al componente ng-image por template binding -->
 <ng-image *ngFor="let objImage of objImages"
-	[objImage]="objImage" (click)="onSelect(objImage)" ></ng-image>
+	[objImage]="objImage" (click)="onSelect(objImage)"
+	data-toggle="modal" data-target="#exampleModalCenter"></ng-image>
 <!-- se itera sobre la lista de objetos del modelo, y 
      se crea un tag por cada imagen -->
+
+
+<!-- componente donde aparecera el detalle de la imagen 
+<ng-image-detail [selectedImage]="selectedImage" ></ng-image-detail>
+-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">
+		{{selectedImage.titulo}}
+	</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	<img src="{{selectedImage.thumbnail}}" class="img-fluid" >
+	<button class="btn btn-primary mt-2" (click)="accion=!accion" >
+		{{accion ? 'Mostrar' : 'Ocultar'}}  </button>
+      </div>
+	<div *ngIf="accion" class="modal-footer">
+	      {{selectedImage.descripcion}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -15,6 +15,9 @@ export class ImageListComponent implements OnInit {
 
 /* array de imagenes vacio */
 objImages: Image[] = [];
+selectedImage: Image;
+
+accion: boolean = false;
  
   constructor(private img_servicio: ImageService ) { }
   
@@ -24,5 +27,9 @@ objImages: Image[] = [];
      el array vacio de imagenes */
    this.objImages = this.img_servicio.getImages();
   }
-
+  
+  /* pasa los datos de la imagen seleccionada al atributo selectedImage */
+  onSelect(image:Image){
+    this.selectedImage = image;
+  }
 }
