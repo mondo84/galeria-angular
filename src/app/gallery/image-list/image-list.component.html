@@ -1,0 +1,6 @@
+
+<!-- se pasan los datos al componente ng-image por template binding -->
+<ng-image *ngFor="let objImage of objImages"
+	[objImage]="objImage" (click)="onSelect(objImage)" ></ng-image>
+<!-- se itera sobre la lista de objetos del modelo, y 
+     se crea un tag por cada imagen -->
