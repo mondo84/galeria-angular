@@ -1,0 +1,16 @@
+<!-- Se pasan los datos de la imagen seleccionada al componente -->
+<ng-image-detail [imageSelected]="imageSelected" ></ng-image-detail>
+
+<div class="container">
+ <div class="row">
+
+<!-- selector componente image -->
+<!-- se pasan los datos con el input binding[] -->
+<!-- se itera sobre el array de objetos imagenes y se crea
+un tag, por cada objeto instanciado-->
+<ng-image *ngFor="let image of images" [image]="image" 
+	(click)="onSelect(image)" ></ng-image>
+
+ </div>
+
+</div>
